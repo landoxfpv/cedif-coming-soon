@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEDIF 2026 — Sito in costruzione</title>
+  <meta name="description" content="CEDIF 2026 — Conferenza Annuale del Centro di Diritto e Finanza, Università di Genova. 11–14 maggio 2026, Sestri Levante.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1C2B4A;
+      --gold: #B8963E;
+      --gold-on-dark: #D4AF6A;
+      --cream: #F7F4EF;
+      --warm-gray: #6B6256;
+      --border: #E2D9CC;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--cream);
+      color: var(--ink);
+      line-height: 1.65;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .serif { font-family: 'Cormorant Garamond', serif; }
+
+    /* ── Header ── */
+    header {
+      height: 64px;
+      background: rgba(28, 43, 74, 0.97);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+
+    header span {
+      font-family: 'Cormorant Garamond', serif;
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── Main ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 64px 2rem 0;
+    }
+
+    .content {
+      max-width: 680px;
+      text-align: center;
+      padding: 4rem 0;
+    }
+
+    /* ── Ornament ── */
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .ornament::before,
+    .ornament::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .ornament span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    /* ── Heading ── */
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 3.75rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--warm-gray);
+      margin-bottom: 3rem;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      margin-bottom: 2rem;
+    }
+
+    .card .icon {
+      width: 48px;
+      height: 48px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .card .icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .card p {
+      font-size: 1.1rem;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+
+    .card .date {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .card .date-note {
+      font-size: 0.875rem;
+      color: var(--warm-gray);
+    }
+
+    /* ── Divider ── */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+      margin: 1.5rem auto;
+    }
+
+    /* ── Link ── */
+    .link-section {
+      margin-top: 0.5rem;
+    }
+
+    .link-section p {
+      font-size: 0.9375rem;
+      color: var(--warm-gray);
+      margin-bottom: 1rem;
+    }
+
+    .link-section a {
+      display: inline-block;
+      border: 1px solid var(--ink);
+      color: var(--ink);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.75rem 2rem;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .link-section a:hover {
+      background: var(--ink);
+      color: white;
+    }
+
+    .link-section a:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8125rem;
+      color: var(--warm-gray);
+    }
+
+    footer span {
+      color: var(--gold);
+    }
+
+    /* ── Countdown ── */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .countdown-item {
+      text-align: center;
+    }
+
+    .countdown-item .number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.25rem;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .countdown-item .label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      margin-top: 0.25rem;
+    }
+
+    /* ── Reduced motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      * { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span>CEDIF 2026</span>
+  </header>
+
+  <main>
+    <div class="content">
+      <div class="ornament">
+        <span>11–14 Maggio 2026</span>
+      </div>
+
+      <h1>CEDIF 2026</h1>
+      <p class="subtitle">Convento dell'Annunziata — Sestri Levante</p>
+
+      <div class="countdown" id="countdown" aria-label="Conto alla rovescia all'apertura iscrizioni">
+        <div class="countdown-item">
+          <div class="number" id="cd-days">--</div>
+          <div class="label">Giorni</div>
+        </div>
+        <div class="countdown-item">
+          <div class="number" id="cd-hours">--</div>
+          <div class="label">Ore</div>
+        </div>
+        <div class="countdown-item">
+          <div class="number" id="cd-min">--</div>
+          <div class="label">Minuti</div>
+        </div>
+        <div class="countdown-item">
+          <div class="number" id="cd-sec">--</div>
+          <div class="label">Secondi</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <p>Sito in costruzione</p>
+        <div class="divider"></div>
+        <p class="date">Giovedì 16 aprile</p>
+        <p class="date-note">Apertura iscrizioni</p>
+      </div>
+
+      <div class="link-section">
+        <p>Nel frattempo, visita il sito del CEDIF<br>Genoa Centre for Law and Finance</p>
+        <a href="https://lawfinance.unige.it/it/node/846" target="_blank" rel="noopener noreferrer">
+          Visita il sito CEDIF
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Centro di Diritto e Finanza <span>·</span> Università di Genova</p>
+  </footer>
+
+  <script>
+    (function() {
+      var target = new Date('2026-04-16T00:00:00+02:00');
+
+      function update() {
+        var now = new Date();
+        var diff = target - now;
+
+        if (diff <= 0) {
+          document.getElementById('cd-days').textContent = '0';
+          document.getElementById('cd-hours').textContent = '0';
+          document.getElementById('cd-min').textContent = '0';
+          document.getElementById('cd-sec').textContent = '0';
+          return;
+        }
+
+        var d = Math.floor(diff / 86400000);
+        var h = Math.floor((diff % 86400000) / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+
+        document.getElementById('cd-days').textContent = d;
+        document.getElementById('cd-hours').textContent = h;
+        document.getElementById('cd-min').textContent = m;
+        document.getElementById('cd-sec').textContent = s;
+      }
+
+      update();
+      setInterval(update, 1000);
+    })();
+  </script>
+
+</body>
+</html>
